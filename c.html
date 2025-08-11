@@ -1,0 +1,118 @@
+<!-- git config --global user.name Name
+git config --global user.email email
+git config --list
+
+
+git init
+git add.
+git commit -m "message"(c.html)
+git branch -m main
+git remote add origin url
+git push origin branchname(main)
+git remote
+git remote -v
+
+
+git add.
+git commit -m "message"
+git push origin branchname
+
+
+git branch
+git branch branchname (to create new branch)
+git checkout branchname()  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border:1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th,
+    td{
+        border:1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th{
+        background-color: lightgray;
+    }
+    #dataTable {
+  display: none;
+}
+
+</style>
+<body>
+  <h1>Fetching API Data</h1>
+  <button id="fetchBtn">Fetch Data</button>
+
+  <div id="dataTable" style="display: none;">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Sl.no</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody id="fetchTable">
+        <!-- Rows will be added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Arrow function to fetch and display user data
+    const fetchUserData = () => {
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(users => {
+          const tableBody = document.getElementById('fetchTable');
+          const tableWrapper = document.getElementById('dataTable');
+          tableBody.innerHTML = "";
+
+          users.forEach((user, index) => {
+            const row = document.createElement('tr');
+
+            const cell1 = document.createElement('td');
+            cell1.textContent = index + 1;
+            row.appendChild(cell1);
+
+            const cell2 = document.createElement('td');
+            cell2.textContent = user.name;
+            row.appendChild(cell2);
+
+            const cell3 = document.createElement('td');
+            cell3.textContent = user.email;
+            row.appendChild(cell3);
+
+            const cell4 = document.createElement('td');
+            cell4.textContent = user.username;
+            row.appendChild(cell4);
+
+            tableBody.appendChild(row);
+          });
+
+          tableWrapper.style.display = "block";
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+          const tableBody = document.getElementById('fetchTable');
+          tableBody.innerHTML = '<tr><td colspan="4">Failed to load data</td></tr>';
+          document.getElementById('dataTable').style.display = "block";
+        });
+    };
+
+    // Attach event listener to the button
+    document.getElementById('fetchBtn').addEventListener('click', fetchUserData);
+  </script>
+</body>
+</html>

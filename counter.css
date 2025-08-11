@@ -1,0 +1,63 @@
+/* 576px ,768px, 992px,1200px */
+/*576px : below  ::-moz-list-bullet
+576-768 : table
+768-992 : small screens
+992-1200 : laptop
+these are the standards given by google*/
+
+ body{
+        text-align: center;
+        padding: 50px;
+    }
+    .cnt{
+        
+        background-color:yellow;
+        padding: 50px;
+        border: 2px solid red;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    button{
+        border: none;
+        padding: 10px 15px;
+        font: size 22px;
+        border-radius: 10px; 
+        color: whitesmoke;
+    }
+    button:nth-child(1){
+        background-color: green;
+        
+}
+    button:nth-child(2){
+        background-color: red;
+    }
+    button:nth-child(3){
+        background-color: darkgrey;
+    }
+    .hiden{
+        display: none;
+    }
+   /* button{
+        hover:blue;
+    }*/
+    @media (max-width:576px){
+        h1{
+            color:green;
+            font-size: 100px;
+            background-color :yellow;
+        }
+        button:nth-child(1){
+            background-color: blue;
+        }
+    }
+        
+    @media (min-width:577px) and(max-width:768px){
+        h1{
+            color:pink;
+            font-size: 40px;
+            background-color: blue;
+        }
+        button:nth-child(1){
+            background-color: orange;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border:1px solid  black;
+        padding: 8px;
+        text-align: left;
+    }
+    th,
+    td{
+         border:1px solid  black;
+        padding: 8px;
+        text-align: left;
+    }
+   th{
+        background-color: lightgray;
+    }
+     #dataTable {
+  display: none;
+}
+    
+</style>
+<body>
+    <h1>Fetching api Data</h1>
+     <button onclick="fetchUserData()">Fetch Data</button>
+     <div id="dataTable">
+
+    
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>email</th>
+      <th>Username</th>
+      <th>sl.no</th>
+    </tr>
+  </thead>
+  <tbody id="fetchTable">
+    <!-- JavaScript will add rows here -->
+  </tbody>
+</table>
+<script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => {
+        const tableBody = document.getElementById('fetchTable');
+        users.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.username}</td>
+            <td>${user.phone}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        const tableBody = document.getElementById('fetchTable');
+        tableBody.innerHTML = '<tr><td colspan="4">Failed to load data</td></tr>';
+      });
+      
+  </script>
+</body>
+</html>

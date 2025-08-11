@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        padding: 50px;
+    }
+    .cnt{
+        
+        background-color:yellow;
+        padding: 50px;
+        border: 2px solid red;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    button{
+        border: none;
+        padding: 10px 15px;
+        font: size 22px;
+        border-radius: 10px; 
+        color: whitesmoke;
+    }
+    button:nth-child(1){
+        background-color: green;
+        
+}
+    button:nth-child(2){
+        background-color: red;
+    }
+    button:nth-child(3){
+        background-color: darkgrey;
+    }
+   /* button{
+        hover:blue;
+    }*/
+    /* tab */
+        @media (max-width:576px){
+        h1{
+            color:green;
+            font-size: 100px;
+            background-color :yellow;
+        }
+        button:nth-child(1){
+            background-color: blue;
+        }
+    }
+    
+ @media (min-width:576px) and (max-width:678px){
+        h1{
+            color:pink;
+            font-size: 40px;
+            background-color: blue;
+        }
+        button:nth-child(1){
+            background-color: orange;
+    }
+}
+    /* small screen */
+
+  @media (max-width:992px){
+        h1{
+            color: navy;
+            font-size: 100px;
+            background-color : oldlace;
+        }
+        button:nth-child(1){
+            background-color: lavender;
+        }
+    }
+    @media (min-width:576px) and (max-width:678px){
+        h1{
+            color:pink;
+            font-size: 40px;
+            background-color: blue;
+        }
+        button:nth-child(1){
+            background-color: orange;
+    }
+}
+
+/* large*/
+ @media (max-width:992px){
+        h1{
+            color: darkkhaki;
+            font-size: 1200px;
+            background-color : rosybrown;
+        }
+        button:nth-child(1){
+            background-color: rgb(93, 93, 225);
+        }
+    }
+    @media (min-width:992px) and (max-width:1200px){
+        h1{
+            color:rgb(55, 24, 29);
+            font-size: 40px;
+            background-color: rgb(142, 142, 157);
+        }
+        button:nth-child(1){
+            background-color: orangereds;
+    }
+}
+/*normal*/
+@media (max-width:576px){
+        h1{
+            color: gold;
+            font-size: 1200px;
+            background-color : lavenderblush;
+        }
+        button:nth-child(1){
+            background-color: darkcyan;
+        }
+    }
+    @media (min-width:250px) and (max-width:576px){
+        h1{
+            color:rgb(99, 84, 87);
+            font-size: 40px;
+            background-color: coral;
+        }
+        button:nth-child(1){
+            background-color: navajowhite;
+    }
+}
+
+</style>
+<body>
+    <h1 class="hidden">Counter Application</h1>
+    <h1 class="a">counter</h1>
+    <div class="cnt">
+        <p id="val">0</p>
+    <div>
+    <button class="a">Increment</button>
+    <button>Decrement</button>
+    <button>Reset</button>
+   </div>
+   </div> 
+   <script src="./counter.js"></script> 
+   <script src="./count.js"></script> 
+   <script src="./count1.js"></script> 
+   <!-- <script src="./counter.css"></script>  -->
+</body>
+</html>

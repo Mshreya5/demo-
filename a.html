@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetching api data</h1>
+    <ul id="fetchList"></ul>
+
+    <script>
+        //Step 1: Want instance of tag where we want to add data
+
+        //Step 2: Want api data
+
+        //Step 3: Create li and put content on it
+
+        //Step 4:Append the li inside ul tag
+
+
+        //Step 1: Want instance of tag where we want to add data
+         const userList =document.getElementById("fetchList");
+            console.log(userList);
+
+          const fetchData = async()=>{
+            const resp=await fetch("https://jsonplaceholder.typicode.com/users");
+            console.log(resp.ok);
+             if(resp.ok===true){//if(resp.ok)
+
+        //Step 2: Want api data
+
+                const data= await resp.json();
+                console.log();
+
+                 data.forEach((el)=>{
+        //Step 3: Create li and put content on it
+
+                    let li=document.createElement("li");
+                    li.textContent=el.name;
+        //Step 4:Append the li inside ul tag
+
+                    userList.appendChild(li);
+             });
+            }
+    };
+    fetchData();
+    </script>
+</body>
+</html>

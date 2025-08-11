@@ -1,0 +1,81 @@
+
+/*base styles */
+body{
+background-color: #f2f2f2;
+font-family: Arial, sans-serif;
+text-align: center;
+margin-top:50px;
+ }
+    .c{
+        background-color: white;
+        padding:20px;
+        width: 300px;
+        border:2px solid #ccc;
+        border-radius: 10px;
+        margin: 0 auto;  /*centers the card */
+    }
+    .n{
+        font-size: 24px;
+        color: #333;
+    }
+    .p{
+        width:150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: 10px;
+
+}
+.b{
+    font-size: 16px;
+    color: #555;
+    margin:15px 0;
+}
+contact-btn{
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color:white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.contact-btn:hover {
+background-color: #004d99;
+}
+
+/* for tablets and small screens */
+@media screen and (max-width:768px) {
+    .c{
+        width: 90%;
+        background-color: #ffffffee;/*slight transparency */
+    }
+
+    .n{
+        font-size: 22px;
+    }
+    .b{
+        font-size: 15px;
+    }
+    .contact-btn{
+        padding: 8px 16px;
+    }
+}
+
+/* for mobile phones */
+@media screen and (max_width:480px) {
+    .c{
+        padding: 15px;
+    }
+    .p{
+        width: 120px;
+        height: 120pxs;
+    }
+
+    .n{
+        font-size: 20px;
+    }
+    .b{
+        font-size: 14px;
+    }
+    .contact-btn{
+        padding: 14px;
+    }
+}
