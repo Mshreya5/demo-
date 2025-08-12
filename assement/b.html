@@ -16,80 +16,88 @@
   padding: 8px; 
   text-align: left; 
 }
+tr:hover{
+    background-color: darkcyan;
+}
+
     </style>
     <body style="background-color: white;">
    <header>
-    <h1>Welcome to <span 
-            style = "color: red;">My Website</span></h1>
+    <h1>Welcome to<span 
+            style = "color: red;"> My Website</span></h1>
     <p> Advanced HTML,CSS & JS Example</p>
     </header>
-    <div class="caption">Student data table </div>
+    <h2 class="caption">Student data table </h2>
     <table style="width:100%;height:auto;border-collapse: collapse;">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Age</th>
-                <th>course</th>
-                </tr>
-                 <tr>
-                <th>John Doe</th>
-                <th>20</th>
-                <th>Computer Science</th>
-                </tr>
-                 <tr>
-                <th>Jane Smith</th>
-                <th>22</th>
-                <th>Information Technology</th>
-                </tr>
-                 <tr>
-                <th>Sam Wilson</th>
-                <th>19</th>
-                <th>Data analytics</th>
+                <th>Course</th>
                 </tr>
                 </thead>
+                <tbody>
+                 <tr>
+                <td>John Doe</td>
+                <td>20</td>
+                <td>Computer Science</td>
+                </tr>
+                 <tr>
+                <td>Jane Smith</td>
+                <td>22</td>
+                <td>Information Technology</td>
+                </tr>
+                 <tr>
+                <td>Sam Wilson</td>
+                <td>19</td>
+                <td>Data Analytics</td>
+                </tr>
+                </tbody>
                 </table>
                
     
-        <p>Click to change my color!This is a more challenging HTML page for students.Famous quote:"Learning never exhausts the mind". Code example:console.log("Hello World")
-            "The best way to predict the future is to create it"_ Abraham Lincoin</p>
-    <img src =".jgh" alt = "Dummy img">
+        <p>Click to change my color!This is a more challenging HTML page for students.Famous quote:"Learning never exhausts the mind". Code example:console.log("Hello World").</p>
+            <p>"The best way to predict the future is to create it"-Abraham Lincoln</p>
+    <img src ="dummy.jpg" alt = "Dummy image">
     <h2>Top Skills</h2>
     <ul id="skillsList">
-        <li>HTML</li>
+        <li>HTML
  <ul>
     <li>Tags</li>
     <li>Attributes</li>
     <li>Forms</li>
-    </ul>
-       <li>CSS</li>
+ </ul>
+ </li>
+       <li>CSS
  <ul>
     <li>Selectors</li>
-    <li>Box models</li>
-    <li>Postioning</li>
-    </ul>
-      <li>JavaScript</li>
+    <li>Box model</li>
+    <li>Positioning</li>
+ </ul>
+ </li>
+      <li>JavaScript
  <ul>
     <li>DOM</li>
     <li>Events</li>
-    <li>function</li>
-    </ul>
+    <li>Functions</li>
+ </ul>
+ </li>
     </ul>
     <p id="data"></p>
-    <input type="Text" id="in" placeholder="Enter new skill">
-    <button onclick="addSkill()">add skill</button>
+    <input type="text" id="in" placeholder="Enter new skill">
+    <button type="button" onclick="addSkill()">add skill</button>
     <h2>Contact Form</h2>
-
     <form>
-  <label>Name:</label>
+  <label >Name:</label>
   <input type="text" name="name"><br><br>
 
   <label>Email:</label>
   <input type="email" name="email" required><br><br>
 
   <button type="submit">Submit</button>
-</form>
+ </form>
      <h3>Full Zone</h3>
-     <button onclick="toggleColor()">Change Background Color</button>
+     <button type="button" onclick="toggleColor()">Change Background Color</button>
      <script>
     let originalColor = document.body.style.backgroundColor;
     let isChanged = false;
@@ -102,8 +110,7 @@
         }
         isChanged = !isChanged;
     }
-</script>
-<script>
+
 function addSkill() {
     let skillInput = document.getElementById("in");
     let skillValue = skillInput.value.trim();
@@ -113,9 +120,11 @@ function addSkill() {
         li.textContent = skillValue;
         document.getElementById("skillsList").appendChild(li);
         skillInput.value = "";
-    } 
-    
+    } else{
+        alert("Please enter a skill.");
+    }
 }
 </script>
+<script src="./a.js"></script>
 </body>
 </html>
