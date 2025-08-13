@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+    body {
+        background-color: #232946;
+    }
+    
+        img {
+            margin: 5px;
+            border: 2px solid #ccc;
+            width: 200px;
+            border-radius: 10px;
+            background: #fff;
+        }
+        h1{
+            color: #e9d2d5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            text-decoration:dashed underline;
+        }
+         #iC {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+    </style>
+<body>
+    <h1>Images</h1>
+    <div id="iC"></div>
+
+    <script>
+        const container = document.getElementById("iC");
+            for (var id = 5; id <= 14; id++) {
+            const img = document.createElement("img");
+            img.src ="https://via.assets.so/movie.png?id="+ id +"&q=95&w=360&h=360&fit=fill" ;
+            img.alt = "Movie "+ id;
+            container.appendChild(img);
+        }
+    </script>
+</body>
+</html>
